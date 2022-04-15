@@ -3,6 +3,11 @@ kind: Deployment
 metadata:
   namespace: mlflow
   name: deployment-mlflow-boston-housing
+  labels:
+    app.kubernetes.io/name: app-mlflow-boston-housing
+  annotations:
+    # Container Image Automated Updates
+    flux.weave.works/automated: "true"
 spec:
   selector:
     matchLabels:
